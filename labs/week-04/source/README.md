@@ -14,6 +14,7 @@
 
 ## Component Tree
 
+```text
 .
 ├── .github/
 ├── docs/
@@ -44,6 +45,7 @@
 │           ├── lab-metadata.json # ไฟล์เมตาดาต้าสถานะการส่งแลป
 │           ├── README.md       # ไฟล์รายงานแลป
 │           └── vite.config.js  # ไฟล์ตั้งค่า Vite
+
 
 ## Setup และ Run
 
