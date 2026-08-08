@@ -8,9 +8,9 @@
 
 ## URLs
 
-- Repository: 
-- Pull Request: TODO
-- GitHub Pages: TODO
+- Repository: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-04
+- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/5
+- GitHub Pages: 
 
 ## Component Tree
 
