@@ -45,7 +45,7 @@ Component App จะรับหน้าที่เป็นศูนย์ก
 | TC-02 Controlled input | ฟิลด์ข้อมูลอัปเดตตาม State พิมพ์ได้ปกติ | Pass | ![TC-02](img/TC2.png) |
 | TC-03 Invalid | แสดงข้อความ Error ใต้ฟิลด์ และไม่เพิ่มข้อมูล | Pass | ![TC-03](evidence/validation.png) |
 | TC-04 Valid add | ข้อมูลถูกเพิ่มไว้บนสุด ฟอร์มถูกรีเซ็ต และ Summary อัปเดต | Pass | ![TC-04](img/TC4.png) |
-| TC-05 Filter | แสดงเฉพาะรายการที่ตรงกับสถานะที่เลือก | Pass | ![TC-05-1](img/TTC5_1.png)<br>![TC-05-2](img/TTC5_2.png)<br>![TC-05-3](img/TTC5_3.png) |
+| TC-05 Filter | แสดงเฉพาะรายการที่ตรงกับสถานะที่เลือก | Pass | ![TC-05-1](img/TC5_1.png)<br>![TC-05-2](img/TC5_2.png)<br>![TC-05-3](img/TC5_3.png) |
 | TC-06 All | แสดงรายการคำร้องกลับมาครบทุกสถานะ | Pass | ![TC-06](img/TC6.png) |
 | TC-07 Empty | แสดงข้อความไม่พบคำร้องเมื่อไม่มีรายการในตัวกรอง | Pass | ![TC-07](evidence/empty-state.png) |
 | TC-08 Delete | ลบรายการออกได้ถูกต้องและ Summary อัปเดตลดลง | Pass | ![TC-08-1](img/TC8_before.png)<br>![TC-08-2](img/TC8_after.png) |
