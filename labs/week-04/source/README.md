@@ -9,18 +9,41 @@
 ## URLs
 
 - Repository: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-04
-- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/5
+- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/6
 - GitHub Pages: https://aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-04/
 
 ## Component Tree
 
-App (State Owner: requests, statusFilter)
-├── AppHeader
-├── SummaryPanel 
-├── RequestForm (State Owner: local form data ภายในตัวเอง)
-└── FilterBar 
-└── RequestList 
-    └── RequestCard
+.
+├── .github/
+├── docs/
+├── labs/
+│   ├── week-01/
+│   ├── week-02/
+│   ├── week-03/
+│   └── week-04/
+│       ├── evidence/       # โฟลเดอร์เก็บภาพหลักฐานการทดสอบ (Test Evidence)
+│       ├── publish/        # โฟลเดอร์ผลลัพธ์จากการ Build เพื่อเตรียมส่ง
+│       └── source/         # โฟลเดอร์เก็บ Source Code หลักของ React LAB 4
+│           ├── dist/       # โฟลเดอร์สำหรับ Build ผลลัพธ์
+│           ├── evidence/
+│           ├── img/
+│           ├── node_modules/
+│           ├── public/
+│           ├── scripts/
+│           ├── src/
+│           │   ├── components/ # โฟลเดอร์คอมเพนเนนต์ย่อย (AppHeader, FilterBar, RequestCard, RequestForm, RequestList, SummaryPanel)
+│           │   ├── data/       # โฟลเดอร์เก็บข้อมูลเริ่มต้น (initialRequests.js)
+│           │   ├── App.jsx     # ไฟล์คอมเพนเนนต์หลัก
+│           │   └── main.jsx    # ไฟล์จุดเริ่มต้นรันโปรแกรม
+│           ├── .gitignore
+│           ├── .nvmrc
+│           ├── index.html      # ไฟล์หน้าเว็บหลัก
+│           ├── package-lock.json
+│           ├── package.json    # ไฟล์กำหนดแพ็กเกจและสคริปต์
+│           ├── lab-metadata.json # ไฟล์เมตาดาต้าสถานะการส่งแลป
+│           ├── README.md       # ไฟล์รายงานแลป
+│           └── vite.config.js  # ไฟล์ตั้งค่า Vite
 
 ## Setup และ Run
 
@@ -52,7 +75,7 @@ Component App จะรับหน้าที่เป็นศูนย์ก
 | TC-09 Mobile | แสดงผลบนจอ 375px ได้สวยงาม ไม่มี Scroll แนวนอน | Pass | ![TC-09](evidence/mobile-375.png) |
 | TC-10 Keyboard | โฟกัสแสดงชัดเจน เลื่อนและกดปุ่มได้ด้วยคีย์บอร์ด | Pass | ![TC-10](img/TC10.png) |
 | TC-11 Build | รันสคริปต์ Build และ Preview ผ่านสมบูรณ์ | Pass | ![TC-11-b](img/TC11_b.png)<br>![TC-11-pv](img/TC11_pv.png)<br>![TC-11-pvsus](img/TC11_pvsus.png) |
-| TC-12 Pages | หน้าเว็บโหลดสมบูรณ์ผ่านลิงก์บนโหมด Incognito | Pass | ![TC-12](img/pages-incognito.png) |
+| TC-12 Pages | หน้าเว็บโหลดสมบูรณ์ผ่านลิงก์บนโหมด Incognito | Pass | ![TC-12](evidence/pages-incognito.png) |
 
 ## Screenshots
 
@@ -61,18 +84,14 @@ Component App จะรับหน้าที่เป็นศูนย์ก
 - Validation: ![Validation](evidence/validation.png)
 - Empty state: ![Empty State](evidence/empty-state.png)
 
-## Screenshots
-
-- Desktop: `evidence/desktop.png`
-- Mobile 375px: `evidence/mobile-375.png`
-- Validation : `evidence/validation.png`
-- empty state: `evidence/empty-state.png`
-
 ## Week 03 → Week 04 Reflection
 
 ตอนทำ Week 03 แบบ DOM-driven เราต้องคอยใช้คำสั่งเข้าไปหยิบจับแก้หน้าเว็บตรงๆ พวก document.createElement หรือ innerHTML ซึ่งถ้าโปรเจกต์เริ่มโต โค้ดจะยาวแถมพังง่ายถ้าจัดการลำดับไม่ดี พอเปลี่ยนมาเป็น Week 04 แบบ State-driven React การทำงานเลยเปลี่ยนมาเป็น แค่เปลี่ยนค่าข้อมูลใน State React ก็จะจัดการคำนวณและวาดหน้า UI ใหม่ให้อัตโนมัติ ทำให้โค้ดเป็นระเบียบ แบ่งเป็น Component ชัดเจน และคุมระบบได้ง่ายแถมปลอดภัยกว่าเดิม
 
 ## AI / External Resource Disclosure
 
-ระบุเครื่องมือหรือแหล่งที่ใช้, prompt/คำถามสำคัญ, ส่วนที่นำมาปรับ และวิธีที่ตรวจสอบความถูกต้อง หากไม่ได้ใช้ให้เขียนว่า “ไม่ได้ใช้”
+- **เครื่องมือหรือแหล่งที่ใช้:** Google Gemini (AI)
+- **Prompt/คำถามสำคัญ:** ช่วยตรวจสอบโครงสร้างไฟล์ `lab-metadata.json`, แนะนำวิธีการแก้ปัญหา Error ของ Git commands , รวมถึงการจัดรูปแบบ Component Tree
+- **ส่วนที่นำมาปรับ:** นำคำแนะนำการแก้ไขปัญหาการอัปเดตสถานะ Submitted, การแก้ไขลิงก์ Pull Request , และโครงสร้างการจัดวางหน้า README มาปรับใช้กับโปรเจกต์
+- **วิธีที่ตรวจสอบความถูกต้อง:** รันคำสั่งตรวจสอบ `npm run check` เพื่อให้ผลลัพธ์ผ่านเกณฑ์ PASS และตรวจสอบสถานะการแสดงผลบนหน้าเว็บไซต์ Dashboard ของรายวิชา กด Ctrl + Shift + V เพื่อเช็คหน้า README `npm run dev ` เพื่อเช็คหน้าเว็บไซต์
 
