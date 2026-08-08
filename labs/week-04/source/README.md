@@ -1,0 +1,78 @@
+# ENGSE203 LAB 4 — Student Evidence README
+
+## ผู้จัดทำ
+
+- ชื่อ–นามสกุล: Aungkanr Sakunbundee
+- รหัสนักศึกษา: 6854210048-3
+- Section: Sce1
+
+## URLs
+
+- Repository: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-04
+- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/5
+- GitHub Pages: 
+
+## Component Tree
+
+App (State Owner: requests, statusFilter)
+├── AppHeader
+├── SummaryPanel 
+├── RequestForm (State Owner: local form data ภายในตัวเอง)
+└── FilterBar 
+└── RequestList 
+    └── RequestCard
+
+## Setup และ Run
+
+```bash
+nvm use
+npm install
+npm run dev
+npm run check
+npm run build
+npm run preview
+```
+
+## State / Props / Callback Explanation
+
+Component App จะรับหน้าที่เป็นศูนย์กลางในการถือ State หลักของคำร้องทั้งหมดและตัวกรองสถานะ ส่วนฟอร์มจะจัดการข้อมูลที่ผู้ใช้กำลังพิมพ์อยู่ด้วยตัวเอง โดยข้อมูลจะไหลจากบนลงล่างผ่าน Props เพื่อส่งต่อไปยัง Component ลูกต่างๆ เช่น SummaryPanel, FilterBar, และ RequestList ในขณะเดียวกัน เมื่อผู้ใช้ทำกิจกรรมที่ฝั่งลูก (เช่น เพิ่มคำร้อง เปลี่ยนตัวกรอง หรือกดลบ) ระบบจะใช้ฟังก์ชัน Callback ส่งข้อมูลและคำสั่งย้อนกลับจากล่างขึ้นบน เพื่อให้ App อัปเดตข้อมูลและเรนเดอร์หน้าจอใหม่ทั้งหมดครับ
+
+## Test Evidence
+
+| Test ID | Actual Result | Pass/Fail | Evidence/Screenshot |
+|---|---|---|---|
+| TC-01 Initial | แสดงผลเริ่มต้นถูกต้อง Console ไม่มี Error | Pass | ![TC-01](evidence/desktop.png) |
+| TC-02 Controlled input | ฟิลด์ข้อมูลอัปเดตตาม State พิมพ์ได้ปกติ | Pass | ![TC-02](img/TC2.png) |
+| TC-03 Invalid | แสดงข้อความ Error ใต้ฟิลด์ และไม่เพิ่มข้อมูล | Pass | ![TC-03](evidence/validation.png) |
+| TC-04 Valid add | ข้อมูลถูกเพิ่มไว้บนสุด ฟอร์มถูกรีเซ็ต และ Summary อัปเดต | Pass | ![TC-04](img/TC4.png) |
+| TC-05 Filter | แสดงเฉพาะรายการที่ตรงกับสถานะที่เลือก | Pass | ![TC-05-1](img/TC5_1.png)<br>![TC-05-2](img/TC5_2.png)<br>![TC-05-3](img/TC5_3.png) |
+| TC-06 All | แสดงรายการคำร้องกลับมาครบทุกสถานะ | Pass | ![TC-06](img/TC6.png) |
+| TC-07 Empty | แสดงข้อความไม่พบคำร้องเมื่อไม่มีรายการในตัวกรอง | Pass | ![TC-07](evidence/empty-state.png) |
+| TC-08 Delete | ลบรายการออกได้ถูกต้องและ Summary อัปเดตลดลง | Pass | ![TC-08-1](img/TC8_before.png)<br>![TC-08-2](img/TC8_after.png) |
+| TC-09 Mobile | แสดงผลบนจอ 375px ได้สวยงาม ไม่มี Scroll แนวนอน | Pass | ![TC-09](evidence/mobile-375.png) |
+| TC-10 Keyboard | โฟกัสแสดงชัดเจน เลื่อนและกดปุ่มได้ด้วยคีย์บอร์ด | Pass | ![TC-10](img/TC10.png) |
+| TC-11 Build | รันสคริปต์ Build และ Preview ผ่านสมบูรณ์ | Pass | ![TC-11-b](img/TC11_b.png)<br>![TC-11-pv](img/TC11_pv.png)<br>![TC-11-pvsus](img/TC11_pvsus.png) |
+| TC-12 Pages | หน้าเว็บโหลดสมบูรณ์ผ่านลิงก์บนโหมด Incognito | Pass | ![TC-12](img/pages-incognito.png) |
+
+## Screenshots
+
+- Desktop: ![Desktop](evidence/desktop.png)
+- Mobile 375px: ![Mobile](evidence/mobile-375.png)
+- Validation: ![Validation](evidence/validation.png)
+- Empty state: ![Empty State](evidence/empty-state.png)
+
+## Screenshots
+
+- Desktop: `evidence/desktop.png`
+- Mobile 375px: `evidence/mobile-375.png`
+- Validation : `evidence/validation.png`
+- empty state: `evidence/empty-state.png`
+
+## Week 03 → Week 04 Reflection
+
+ตอนทำ Week 03 แบบ DOM-driven เราต้องคอยใช้คำสั่งเข้าไปหยิบจับแก้หน้าเว็บตรงๆ พวก document.createElement หรือ innerHTML ซึ่งถ้าโปรเจกต์เริ่มโต โค้ดจะยาวแถมพังง่ายถ้าจัดการลำดับไม่ดี พอเปลี่ยนมาเป็น Week 04 แบบ State-driven React การทำงานเลยเปลี่ยนมาเป็น แค่เปลี่ยนค่าข้อมูลใน State React ก็จะจัดการคำนวณและวาดหน้า UI ใหม่ให้อัตโนมัติ ทำให้โค้ดเป็นระเบียบ แบ่งเป็น Component ชัดเจน และคุมระบบได้ง่ายแถมปลอดภัยกว่าเดิม
+
+## AI / External Resource Disclosure
+
+ระบุเครื่องมือหรือแหล่งที่ใช้, prompt/คำถามสำคัญ, ส่วนที่นำมาปรับ และวิธีที่ตรวจสอบความถูกต้อง หากไม่ได้ใช้ให้เขียนว่า “ไม่ได้ใช้”
+
