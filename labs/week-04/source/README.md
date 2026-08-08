@@ -9,8 +9,8 @@
 ## URLs
 
 - Repository: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-04
-- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/6
-- GitHub Pages: https://aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-04/
+- Pull Request: https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/8
+- GitHub Pages: https://aungkanr.github.io/engse203-student-labs-68543210048-3/
 
 ## Component Tree
 
