@@ -1,0 +1,11 @@
+{
+"week": "week-05",
+  "title": "React Campus Service Request",
+  "status": "submitted",
+  "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-05",
+  "originalCommit": "0a2374dc3ad48ae03c934c2195e8178a6723c00a",
+  "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/10",
+  "submissionTag": "lab-05-submission-v1",
+  "testStatus": "pass",
+  "notes": "ทำโจทย์ 5A และ 5B ครบถ้วน, ผ่านการทดสอบ 133/133 รายการ"
+}
