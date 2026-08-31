@@ -53,10 +53,15 @@ function DashboardPage() {
 
   const lowerQuery = searchQuery.toLowerCase();
   
-  const filteredRequests = requests.filter((request) => 
-    request.requesterName.toLowerCase().includes(lowerQuery) || 
-    request.details.toLowerCase().includes(lowerQuery)
-  );
+  const filteredRequests = requests
+    // ชั้นที่ 1: กรองสถานะก่อน (ถ้าเป็น 'all' ปล่อยผ่านหมด, ถ้าไม่ใช่ให้เทียบค่า)
+    .filter((request) => statusFilter === 'all' || request.status === statusFilter)
+    
+    // ชั้นที่ 2: เอาผลจากชั้นแรก มากรองด้วยข้อความค้นหาต่อ (Chain filter)
+    .filter((request) => 
+      request.requesterName.toLowerCase().includes(lowerQuery) || 
+      request.details.toLowerCase().includes(lowerQuery)
+    );
 
   function handleRetry() {
     if (scenario) setSearchParams({});
