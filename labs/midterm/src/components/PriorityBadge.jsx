@@ -8,7 +8,7 @@ function PriorityBadge({ priority }) {
   }
 
   // ตอนนี้ถ้าไม่ใช่ 2 ค่าบน จะยังไม่คืนค่าอะไรกลับไป (เดี๋ยวมาเติมใน 4.2)
-  return null; 
+  return <span className="priority-unknown">ไม่ระบุ</span>;
 }
 
 export default PriorityBadge;
