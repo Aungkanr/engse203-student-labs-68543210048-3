@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PriorityBadge from './PriorityBadge.jsx';
 
 function RequestCard({ request, onDeleteRequest, onMarkDone }) {
   return (
@@ -9,8 +10,8 @@ function RequestCard({ request, onDeleteRequest, onMarkDone }) {
         <p>{request.location}</p>
         <p>{request.details}</p>
         {/* TODO B4: แทน {request.priority} ด้านล่างด้วย <PriorityBadge priority={request.priority} /> ที่คุณสร้าง */}
-        <p><span className={`badge ${request.status}`}>{request.status}</span> · {request.priority}</p>
-      </div>
+{/* TODO B4: แทน {request.priority} ด้านล่างด้วย <PriorityBadge priority={request.priority} /> ที่คุณสร้าง */}
+<p><span className={`badge ${request.status}`}>{request.status}</span> · <PriorityBadge priority={request.priority} /></p>      </div>
 
       {/* 🔴 ส่วนที่แก้ไข: สร้าง div มาครอบเพื่อจัดกลุ่มปุ่ม และเพิ่มเงื่อนไขซ่อน/แสดงปุ่ม "ทำเสร็จ" */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
