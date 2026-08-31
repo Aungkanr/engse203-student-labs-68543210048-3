@@ -6,7 +6,7 @@ import LoadingState from '../components/LoadingState.jsx';
 import RequestList from '../components/RequestList.jsx';
 import SummaryPanel from '../components/SummaryPanel.jsx';
 import useManualReload from '../hooks/useManualReload.js';
-import { deleteRequest, getRequests, resetRequests } from '../services/requestService.js';
+import { deleteRequest, getRequests, resetRequests, updateRequestStatus } from '../services/requestService.js';
 
 function DashboardPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,6 +15,7 @@ function DashboardPage() {
   const [loadState, setLoadState] = useState('idle');
   const [requests, setRequests] = useState([]);
   const [statusFilter, setStatusFilter] = useState('all');
+  
   // TODO B2: เพิ่ม state สำหรับข้อความค้นหา ที่นี่
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -45,7 +46,6 @@ function DashboardPage() {
 
   const summary = useMemo(() => ({
     total: requests.length,
-
     pending: requests.filter((request) => request.status === 'pending').length,
     inProgress: requests.filter((request) => request.status === 'in-progress').length,
     completed: requests.filter((request) => request.status === 'completed').length,
@@ -78,16 +78,18 @@ function DashboardPage() {
     }
   }
 
-  // วางต่อจากฟังก์ชัน handleDelete
-  function handleMarkDone(requestId) {
-    // โค้ด B3.2: สร้างข้อมูลชุดใหม่ โดยเปลี่ยนแค่สถานะของใบที่ถูกกด
-    const nextRequests = requests.map((req) => 
-      req.id === requestId ? { ...req, status: 'completed' } : req
-    );
-    
-    // อัปเดต State หน้าจอและแผงสรุปจะเปลี่ยนทันที
-    setRequests(nextRequests);
-    setNotice(`เปลี่ยนสถานะคำร้อง ${requestId} เป็นเสร็จสิ้นแล้ว`);
+  // 🔴 โค้ดที่เปลี่ยนสำหรับ B3.3: เปลี่ยนเป็น async และใช้ updateRequestStatus เพื่อให้ข้อมูล persist
+  async function handleMarkDone(requestId) {
+    try {
+      // เรียก Service เพื่ออัปเดตสถานะและบันทึกลง LocalStorage
+      const nextRequests = await updateRequestStatus(requestId, 'completed');
+      
+      // เอาข้อมูลที่อัปเดตแล้ว มาเซ็ต State ให้หน้าจอเปลี่ยนตาม
+      setRequests(nextRequests);
+      setNotice(`เปลี่ยนสถานะคำร้อง ${requestId} เป็นเสร็จสิ้นแล้ว`);
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'อัปเดตสถานะไม่สำเร็จ');
+    }
   }
 
   async function handleReset() {
@@ -131,7 +133,7 @@ function DashboardPage() {
               />
             </div>
             {/* TODO B3: เพิ่ม onMarkDone={handleMarkDone} และเขียน handleMarkDone ให้เรียก updateRequestStatus แล้ว setRequests เพื่อให้ summary อัปเดต + รอด refresh */}
-            <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} />
+            <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} onMarkDone={handleMarkDone} />
           </section>
         </>
       )}
@@ -140,4 +142,3 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
-<RequestList requests={filteredRequests} onDeleteRequest={handleDelete} onMarkDone={handleMarkDone} />
