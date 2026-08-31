@@ -78,6 +78,18 @@ function DashboardPage() {
     }
   }
 
+  // วางต่อจากฟังก์ชัน handleDelete
+  function handleMarkDone(requestId) {
+    // โค้ด B3.2: สร้างข้อมูลชุดใหม่ โดยเปลี่ยนแค่สถานะของใบที่ถูกกด
+    const nextRequests = requests.map((req) => 
+      req.id === requestId ? { ...req, status: 'completed' } : req
+    );
+    
+    // อัปเดต State หน้าจอและแผงสรุปจะเปลี่ยนทันที
+    setRequests(nextRequests);
+    setNotice(`เปลี่ยนสถานะคำร้อง ${requestId} เป็นเสร็จสิ้นแล้ว`);
+  }
+
   async function handleReset() {
     if (!window.confirm('ต้องการคืนข้อมูลตัวอย่างเริ่มต้นหรือไม่?')) return;
     try {
@@ -128,3 +140,4 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
+<RequestList requests={filteredRequests} onDeleteRequest={handleDelete} onMarkDone={handleMarkDone} />
