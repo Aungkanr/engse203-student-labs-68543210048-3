@@ -2,10 +2,9 @@
   "week": "week-06",
   "title": "React Campus Service Request",
   "status": "submitted",
-  "sourceOrigin": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-06",
-  "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-685432100483",
-  "originalCommit": "8c5757159ffe3db245caafd3608f6390101ae7a9",
-  "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/15",
+  "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-06",
+  "originalCommit": "db39d8bd0f4223f537465d2b34536c4408caaaa3",
+  "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/12",
   "submissionTag": "lab-06-submission-v1",
   "testStatus": "pass",
   "notes": "ทำโจทย์ inclass และ Thakhome ครบถ้วน, ผ่านการทดสอบ  และ Challenge ครบถ้วน (28/28 รายการ)"
