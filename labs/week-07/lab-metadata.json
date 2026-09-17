@@ -1,12 +1,11 @@
 {
   "week": "week-07",
-  "title": "Restful API with Express",
+  "title": "Rest-Validation",
   "status": "submitted",
-  "sourceOrigin": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-06",
+  "sourceOrigin": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-07",
   "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3",
   "originalCommit": "8c5757159ffe3db245caafd3608f6390101ae7a9",
   "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/15",
-  "submissionTag": "lab-06-submission-v1",
-  "testStatus": "pass",
-  "notes": "ทำโจทย์ inclass และ Takehome ครบถ้วน, ผ่านการทดสอบ และ Challenge ครบถ้วน (28/28 รายการ)"
+  "submissionTag": "lab-07-submission-v1",
+  "testStatus": "pass"
 }
