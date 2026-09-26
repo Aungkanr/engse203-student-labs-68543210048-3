@@ -35,7 +35,7 @@ describe('GET /api/requests', () => {
       requesterName: 'นายทดสอบ ทดสอบ',
       requestType: 'แจ้งซ่อม',
       location: 'ห้อง 101',
-      details: 'แอร์เสีย',
+      details: 'แอร์เสียเปิดไม่ติด',
       priority: 'urgent'
     };
     const res = await request(app).post('/api/requests').send(newReq).expect(201);
