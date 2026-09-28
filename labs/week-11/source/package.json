@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "npm install --include=dev --prefix frontend && npm run build --prefix frontend && npm install --prefix api",
-    "start": "npm start --prefix api",
+    "start": "npm --prefix api start ",
     "check": "node --disable-warning=ExperimentalWarning check-week11.mjs"
   },
   
