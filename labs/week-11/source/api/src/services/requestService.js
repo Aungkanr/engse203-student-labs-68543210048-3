@@ -19,6 +19,18 @@ const DB_FILE = process.env.DB_FILE ?? path.join(API_ROOT, 'data', 'campus.db');
 const SCHEMA_FILE = path.join(API_ROOT, 'data', 'schema.sql');
 
 let db;
+let driver = 'sqlite';
+
+async function openDatabase() {
+  const url = process.env.TURSO_DATABASE_URL;
+  if (url) {
+    const { default: Database } = await import('libsql');
+    driver = 'turso';
+    return new Database(url, { authToken: process.env.TURSO_AUTH_TOKEN });
+  }
+  driver = 'sqlite';
+  return new DatabaseSync(DB_FILE);
+}
 
 /**
  * คืนข้อมูลในรูปแบบเดียวกับที่ API เคยส่งตั้งแต่ Week 05
@@ -37,7 +49,7 @@ const SELECT_SHAPE = `
   JOIN users u ON u.id = r.requester_id`;
 
 export async function loadSeed() {
-  db = new DatabaseSync(DB_FILE);
+  db = await openDatabase();
   db.exec('PRAGMA foreign_keys = ON');   // ⚠ ต้องเปิดทุกครั้งที่เปิดฐานข้อมูล
   // ถ้ายังไม่มีตาราง (ไฟล์ฐานข้อมูลใหม่) ให้สร้างจาก schema.sql
   const ready = db.prepare(
@@ -54,7 +66,7 @@ export function getDbStatus() {
   try {
     if (!db) return { connected: false, reason: 'ยังไม่ได้เปิดฐานข้อมูล' };
     const n = db.prepare("SELECT COUNT(*) c FROM sqlite_master WHERE type='table'").get().c;
-    return { connected: true, driver: 'sqlite', tables: n };
+    return { connected: true, driver: driver, tables: n };
   } catch (e) {
     return { connected: false, reason: e.message };
   }
@@ -122,3 +134,4 @@ export function remove(id) {
   db.prepare('DELETE FROM requests WHERE id = ?').run(id);
   return target;
 }
+
