@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import ErrorState from '../components/ErrorState.jsx';
 import LoadingState from '../components/LoadingState.jsx';
 import useManualReload from '../hooks/useManualReload.js';
-import { getRequestById } from '../services/requestService.js';
+import { getRequestById, updateRequestStatus } from '../services/requestService.js';
 
 function RequestDetailPage() {
   const { requestId } = useParams();
@@ -11,6 +11,19 @@ function RequestDetailPage() {
   const [request, setRequest] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [reloadKey, reload] = useManualReload();
+  const [saving, setSaving] = useState(false);
+
+  async function handleStatusChange(newStatus) {
+    setSaving(true);
+    try {
+      const updated = await updateRequestStatus(request.id, newStatus);
+      setRequest((prev) => ({ ...prev, ...updated }));
+    } catch (error) {
+      alert(error instanceof Error ? error.message : 'เปลี่ยนสถานะไม่สำเร็จ');
+    } finally {
+      setSaving(false);
+    }
+  }
 
   useEffect(() => {
     let ignore = false;
@@ -39,6 +52,19 @@ function RequestDetailPage() {
         <article className="panel detail-card">
           <h2>{request.requestType}</h2>
           <dl><div><dt>ID</dt><dd>{request.id}</dd></div><div><dt>ผู้แจ้ง</dt><dd>{request.requesterName}</dd></div><div><dt>สถานที่</dt><dd>{request.location}</dd></div><div><dt>รายละเอียด</dt><dd>{request.details}</dd></div><div><dt>ความเร่งด่วน</dt><dd>{request.priority}</dd></div><div><dt>สถานะ</dt><dd>{request.status}</dd></div></dl>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center', margin: '16px 0' }}>
+            <strong>เปลี่ยนสถานะ:</strong>
+            {['pending', 'in-progress', 'completed'].map((s) => (
+              <button
+                key={s}
+                type="button"
+                disabled={saving || request.status === s}
+                onClick={() => handleStatusChange(s)}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
           <Link to="/">กลับ Dashboard</Link>
         </article>
       )}

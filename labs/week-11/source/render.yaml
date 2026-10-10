@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: campus-service
+    runtime: node
+    rootDir: labs/week-11/source
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.13.0
+      - key: NODE_ENV
+        value: production
