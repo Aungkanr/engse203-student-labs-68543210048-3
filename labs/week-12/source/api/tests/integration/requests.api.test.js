@@ -136,3 +136,8 @@ describe('ข้อมูลผิดรูปแบบและ endpoint ผู
     expect(r.body.map((x) => x.id)).toEqual(['REQ-001', 'REQ-004']);
   });
 });
+describe('Error handling', () => {
+  test('POST /api/requests with invalid JSON -> 400', async () => {
+    await request(app).post('/api/requests').set('Content-Type', 'application/json').send('{ bad json }').expect(400);
+  });
+});
