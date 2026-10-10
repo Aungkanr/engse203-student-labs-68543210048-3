@@ -1,7 +1,11 @@
 {
   "week": "week-11",
-  "title": "Week 11",
+  "title": "Node.js Database Integration",
   "status": "submitted",
+  "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3",
+  "originalCommit": "48b5ca3",
+  "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/47",
+  "submissionTag": "lab-11-submission-v1",
   "testStatus": "pass",
   "display": "webapp"
 }
