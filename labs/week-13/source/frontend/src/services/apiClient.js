@@ -33,7 +33,7 @@ export async function apiFetch(path, options = {}) {
   let response;
   try {
     response = await fetch(`${BASE_URL}${path}`, {
-      headers: { 'Content-Type': 'application/json', ...options.headers },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}`, ...options.headers },
       ...options,
     });
   } catch {
