@@ -124,9 +124,9 @@
   },
   {
     "week": "week-10",
-    "title": "์Node-database",
+    "title": "Node.js Database Integration (เชื่อม Node เข้ากับฐานข้อมูล)",
     "status": "submitted",
-    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit4/week-10",
+    "sourceOrigin": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-10",
     "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3",
     "originalCommit": "fc09cba1893240a68cab7dd00a904161955fc3a8",
     "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/38",
@@ -140,7 +140,7 @@
   },
   {
     "week": "week-11",
-    "title": "Node.js Database Integration",
+    "title": "Full-stack Integration & Deploy (บูรณาการเป็นระบบจริงที่ deploy ได้)",
     "status": "submitted",
     "originalRepoUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3",
     "originalCommit": "48b5ca3",
@@ -150,7 +150,7 @@
     "display": "webapp",
     "pageUrl": "https://Aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-11/",
     "sourceUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-11/labs/week-11/source",
-    "hasPublish": false,
+    "hasPublish": true,
     "sourceEntries": 16
   },
   {
@@ -165,8 +165,8 @@
     "display": "webapp",
     "pageUrl": "https://Aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-12/",
     "sourceUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-12/labs/week-12/source",
-    "hasPublish": false,
-    "sourceEntries": 19
+    "hasPublish": true,
+    "sourceEntries": 18
   },
   {
     "week": "week-13",

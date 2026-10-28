@@ -10,3 +10,6 @@ Thumbs.db
 # docs/ เป็นผล build สำหรับ GitHub Pages และต้อง commit
 !docs/
 !docs/**
+
+# Claude Code worktrees (ห้าม commit — ทำให้ GitHub Pages checkout ล้ม)
+.claude/
