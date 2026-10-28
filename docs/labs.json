@@ -148,6 +148,7 @@
     "submissionTag": "lab-11-submission-v1",
     "testStatus": "pass",
     "display": "webapp",
+    "notes": "Live demo บน Render + Turso: https://campus-service-week11-ai7i.onrender.com (View Result บน GitHub Pages ดึงข้อมูลจาก API นี้ · Render free อาจใช้เวลาตื่น 30-50 วินาที)",
     "pageUrl": "https://Aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-11/",
     "sourceUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-11/labs/week-11/source",
     "hasPublish": true,
@@ -166,7 +167,7 @@
     "pageUrl": "https://Aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-12/",
     "sourceUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-12/labs/week-12/source",
     "hasPublish": true,
-    "sourceEntries": 18
+    "sourceEntries": 17
   },
   {
     "week": "week-13",
