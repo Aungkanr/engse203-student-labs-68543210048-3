@@ -13,3 +13,6 @@ Thumbs.db
 
 # git worktrees ในเครื่อง (ห้าม commit — ทำให้ GitHub Pages checkout ล้ม)
 .claude/
+
+# week-12: frontend/.env.production ไม่มีค่าลับ ต้องใช้ตอน build บน Render
+!labs/week-12/source/frontend/.env.production
