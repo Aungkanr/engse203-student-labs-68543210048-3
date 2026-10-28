@@ -8,6 +8,7 @@
   "submissionTag": "lab-12-submission-v1",
   "testStatus": "pass",
   "display": "webapp",
+  "notes": "Live demo บน Render: https://campus-service-week12.onrender.com (View Result บน GitHub Pages ดึงข้อมูลจาก API นี้ · Render free อาจใช้เวลาตื่น 30-50 วินาที)",
   "pageUrl": "https://Aungkanr.github.io/engse203-student-labs-68543210048-3/labs/week-12/",
   "sourceUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/tree/lab/week-12/labs/week-12/source",
   "hasPublish": true,
