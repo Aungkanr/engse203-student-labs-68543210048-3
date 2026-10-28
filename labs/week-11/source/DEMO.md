@@ -10,5 +10,6 @@
 - [x] config · health check · production vs dev
 
 ## Live Demo (ถ้าทำ Challenge)
-🔗 https://xxxx.onrender.com
-ฐานข้อมูล: SQLite ไฟล์ (รีเซ็ตเมื่อ restart) / Turso (ข้อมูลถาวร)
+🔗 https://campus-service-week11-ai7i.onrender.com
+- Health check: https://campus-service-week11-ai7i.onrender.com/api/health
+ฐานข้อมูล: Turso (ข้อมูลถาวร · `/api/health` แสดง "driver":"turso")
