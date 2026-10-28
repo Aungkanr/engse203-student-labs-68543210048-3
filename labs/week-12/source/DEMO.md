@@ -1,7 +1,7 @@
 # หลักฐานการสาธิต — Campus Service Full-Stack (A4)
 
 ## วิดีโอสาธิต
-🔗 (ใส่ลิงก์วิดีโอ YouTube/Drive/Loom ที่นี่)
+🔗 (https://youtu.be/46gStILorSI)
 
 ## Live Demo (Render)
 🔗 https://campus-service-week12.onrender.com
