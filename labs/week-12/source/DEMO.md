@@ -3,6 +3,11 @@
 ## วิดีโอสาธิต
 🔗 (ใส่ลิงก์วิดีโอ YouTube/Drive/Loom ที่นี่)
 
+## Live Demo (Render)
+🔗 https://campus-service-week12.onrender.com
+- Health check: https://campus-service-week12.onrender.com/api/health
+- ฐานข้อมูล: SQLite ไฟล์ (รีเซ็ตเมื่อ restart)
+
 ## สิ่งที่สาธิตในวิดีโอ (ครบวงจร)
 
 - [ ] เปิดระบบครบ 3 ชั้น (React + API + DB)
