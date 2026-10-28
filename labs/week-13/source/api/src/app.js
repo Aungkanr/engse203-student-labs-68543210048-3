@@ -16,6 +16,12 @@ export function createApp() {
   // ① CORS — dev ใช้ (frontend 5173 เรียก API 3001 ข้ามพอร์ต)
   //    production ไม่จำเป็น เพราะเว็บกับ API อยู่ origin เดียวกัน แต่ใส่ไว้ไม่เสียหาย
   app.use(cors({ origin: config.corsOrigin }));
+  app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('Referrer-Policy', 'no-referrer');
+    next();
+  });
 
   // ② logging — dev อ่านง่าย · production ละเอียดสำหรับเก็บ log
   // test ไม่ต้อง log ทุกคำขอ — ผลการทดสอบจะได้อ่านง่าย
