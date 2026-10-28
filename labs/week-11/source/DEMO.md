@@ -5,7 +5,7 @@
 - [x] เปิด 3 ชั้น · CRUD · health · production mode
 
 ## ช่วง B — อธิบาย source
-🔗 https://youtu.be/46gStILorSI (คลิปเดียวกับช่วง A)
+🔗 (ลิงก์ · หรือ timestamp)
 - [x] frontend → API → service → DB
 - [x] config · health check · production vs dev
 
