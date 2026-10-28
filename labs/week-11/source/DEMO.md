@@ -1,11 +1,11 @@
 # หลักฐานการสาธิต (A4)
 
 ## ช่วง A — สาธิตระบบ
-🔗 (ลิงก์ · หรือ timestamp ถ้าวิดีโอเดียว)
+🔗 https://youtu.be/46gStILorSI
 - [x] เปิด 3 ชั้น · CRUD · health · production mode
 
 ## ช่วง B — อธิบาย source
-🔗 (ลิงก์ · หรือ timestamp)
+🔗 https://youtu.be/46gStILorSI (คลิปเดียวกับช่วง A)
 - [x] frontend → API → service → DB
 - [x] config · health check · production vs dev
 
