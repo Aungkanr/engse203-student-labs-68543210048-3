@@ -7,5 +7,6 @@
   "pullRequestUrl": "https://github.com/Aungkanr/engse203-student-labs-68543210048-3/pull/58",
   "submissionTag": "lab-13-submission-v1",
   "testStatus": "pass",
-  "display": "webapp"
+  "display": "webapp",
+  "notes": "Live demo บน Render: https://campus-service-week13-mtno.onrender.com (View Result บน GitHub Pages ดึงข้อมูลจาก API นี้ · Render free อาจใช้เวลาตื่น 30-50 วินาที)"
 }

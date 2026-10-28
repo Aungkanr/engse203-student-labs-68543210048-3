@@ -1,7 +1,13 @@
 # หลักฐานการสาธิต — Campus Service Full-Stack (A4)
 
 ## วิดีโอสาธิต
-🔗 (ใส่ลิงก์วิดีโอ YouTube/Drive/Loom ที่นี่)
+🔗 (https://youtu.be/46gStILorSI)
+
+## Live Demo (Render)
+🔗 https://campus-service-week13-mtno.onrender.com
+- Health check: https://campus-service-week13-mtno.onrender.com/api/health
+- ฐานข้อมูล: SQLite ไฟล์ (รีเซ็ตเมื่อ restart)
+- `JWT_SECRET` ให้ Render สุ่มค่า (ไม่อยู่ใน git)
 
 ## สิ่งที่สาธิตในวิดีโอ (ครบวงจร)
 
